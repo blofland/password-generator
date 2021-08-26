@@ -1,6 +1,11 @@
-// Assignment code here
+// Define Variables
+
+var abcUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var abcLower = 'abcdefghijklmnopqrstuvwxyz'
+var specialChar = '!@#%^&*+~'
 
 
+window.onload = alert("Welcome! Please click 'Generate password' to start!");
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 

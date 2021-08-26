@@ -1,22 +1,28 @@
-// Define Variables
+//Add event listener
 
-var abcUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-var abcLower = 'abcdefghijklmnopqrstuvwxyz'
-var specialChar = '!@#%^&*+~'
+document.querySelector("#generate").addEventListener("click", writePassword);
+
+// define variables
+var number = ['1 2 3 4 5 6 7 8 9 0'];
+var specialChar = ['~ ! @ # $ % ^ & * ( ) _ + = < > , . ? /'];
+var abcLower = ['a b c d e f g h i j k l m n o p q r s t u v w x y z'];
+var abcUpper = ['A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'];
+
+var confirmLength = "";
 
 
-window.onload = alert("Welcome! Please click 'Generate password' to start!");
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function generatePassword() {
+  var confirmLength = (prompt("How many characters would you like your password to contain?"));
 
-  passwordText.value = password;
 
-}
+  while(confirmLength <= 7 || confirmLength >= 51) {
+      alert("Password length must be between 8-50 characters Try again");
+      var confirmLength = (prompt("How many characters would you like your password to contain?"));
+      } 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+      // Repeat back how many charactes the user will have  
+      alert(`Your password will have ${confirmLength} characters`);
+
+   
+    }

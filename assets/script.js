@@ -11,18 +11,25 @@ var abcUpper = ['A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'];
 var confirmLength = "";
 
 
-
+// function to make password
 function generatePassword() {
   var confirmLength = (prompt("How many characters would you like your password to contain?"));
 
 
-  while(confirmLength <= 7 || confirmLength >= 51) {
-      alert("Password length must be between 8-50 characters Try again");
+  while(confirmLength <= 7 || confirmLength >= 150) {
+      alert("Password length must be between 8-150 characters Try again");
       var confirmLength = (prompt("How many characters would you like your password to contain?"));
       } 
 
-      // Repeat back how many charactes the user will have  
+      // tell user how many characters password will have
       alert(`Your password will have ${confirmLength} characters`);
 
    
     }
+
+    // function to produce password
+function writePassword() {
+    var password = generatePassword();
+  
+    passwordText.value = password;
+  }
